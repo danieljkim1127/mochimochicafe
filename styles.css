@@ -1,0 +1,329 @@
+:root {
+  --bg: #faf9f7;
+  --text: #2b2b2b;
+  --muted: #6b6b6b;
+  --accent: #b7791f;
+  --card: #ffffff;
+}
+
+/* =====================
+   RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+   BASE
+===================== */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =====================
+   HEADER
+===================== */
+header {
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  margin-left: 1.25rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* =====================
+   SECTIONS
+===================== */
+section {
+  padding: 3rem 1.25rem;
+}
+
+/* =====================
+   TITLES
+===================== */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  max-width: 18ch;
+  line-height: 1.25;
+}
+
+.hero p {
+  color: var(--muted);
+  margin-bottom: 2rem;
+  max-width: 45ch;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.hero button,
+.menu-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* =====================
+   MENU
+===================== */
+
+/* Divider under Menu title (KEEP THIS) */
+.menu-top-divider {
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  border-top: 2px solid #e5e5e5;
+}
+
+/* Menu category wrapper */
+.menu-category {
+  max-width: 700px;
+  margin: 0 auto 0 auto;
+}
+
+/* Divider ONLY between categories */
+.menu-category + .menu-category {
+  padding-top: 1.25rem;
+  border-top: 1.5px solid #e5e5e5;
+}
+
+.menu-category-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Menu rows */
+.menu-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ededed;
+}
+
+.menu-item-row:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  font-size: 1rem;
+  max-width: 75%;
+}
+
+.item-price {
+  font-size: 0.95rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* =====================
+   ABOUT / CONTACT
+===================== */
+.about {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: var(--muted);
+}
+
+.contact {
+  text-align: center;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  padding: 2rem 1.25rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* =====================
+   TABLET & DESKTOP
+===================== */
+@media (min-width: 768px) {
+  header {
+    padding: 2rem 3rem;
+  }
+
+  section {
+    padding: 4rem 3rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    max-width: 20ch;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* =====================
+   SMALL PHONES
+===================== */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+    margin-left: 0.75rem;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+    max-width: 16ch;
+  }
+}
+
+/* =====================
+   COLLAPSIBLE MENU
+===================== */
+
+.menu-category-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 1.25rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.menu-category-header:hover {
+  color: var(--accent);
+}
+
+/* Icon container */
+.chevron {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* DEFAULT (OPEN): show × */
+.chevron::before {
+  content: "×";
+}
+
+/* COLLAPSED (CLOSED): show + */
+.menu-category.collapsed .chevron::before {
+  content: "+";
+}
+
+/* Collapsible content */
+.menu-category-content {
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+/* Closed by default */
+.menu-category.collapsed .menu-category-content {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =====================
+   HERO IMAGE CAROUSEL
+===================== */
+.hero-image-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Adjust this */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}

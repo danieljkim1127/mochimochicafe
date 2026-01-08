@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mochi Mochi Cafe</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Mochi Mochi Cafe</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Fresh Coffee, Made With Care</h1>
+        <p>
+          Family owned and operated. Enjoy our fresh delicious coffee, bubble tea,
+          breads, and desserts! Newly renovated for a study friendly environment
+          and casual meet ups. We are excited to share our treats with you!
+        </p>
+        <a href="menu.html" class="menu-button">View Menu</a>
+      </div>
+      <div class="hero-image-carousel">
+  <img src="images/mochi1.jpg" class="carousel-image active" alt="Cafe Exterior">
+  <img src="images/mochi2.jpg" class="carousel-image" alt="Cafe Entrance">
+  <img src="images/mochi3.jpg" class="carousel-image" alt="Cafe Interior">
+</div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Visit Us</h2>
+      <div class="contact">
+        <p>Mon–Thu: 10am – 10pm</p>
+        <p>Fri–Sat: 10am – 11pm</p>
+        <p>Sun: 12pm – 10pm</p>
+        <p>2175 Lemoine Ave, Fort Lee, NJ 07024</p>
+        <p>Email: mochimochi@gmail.com</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Mochi Mochi Cafe. All rights reserved.
+  </footer>
+
+<script>
+  const images = document.querySelectorAll('.carousel-image');
+  let currentIndex = 0;
+
+  setInterval(() => {
+    images[currentIndex].classList.remove('active');
+
+    currentIndex = (currentIndex + 1) % images.length;
+
+    images[currentIndex].classList.add('active');
+  }, 4000); // 4 seconds per image
+</script>
+
+</body>
+</html>
