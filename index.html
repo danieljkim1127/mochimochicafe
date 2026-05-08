@@ -1,75 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mochi Mochi Cafe</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mochi Mochi Cafe</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header>
-    <div class="logo">Mochi Mochi Cafe</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<canvas id="bubbleCanvas"></canvas>
 
-  <main>
-    <section class="hero">
-      <div>
-        <h1>Fresh Coffee, Made With Care</h1>
-        <p>
-          Family owned and operated. Enjoy our fresh delicious coffee, bubble tea,
-          breads, and desserts! Newly renovated for a study friendly environment
-          and casual meet ups. We are excited to share our treats with you!
-        </p>
-        <a href="menu.html" class="menu-button">View Menu</a>
-      </div>
-      <div class="hero-image-carousel">
-  <img src="images/mochi1.jpg" class="carousel-image active" alt="Cafe Exterior">
-  <img src="images/mochi2.jpg" class="carousel-image" alt="Cafe Entrance">
-  <img src="images/mochi3.jpg" class="carousel-image" alt="Cafe Interior">
+<nav>
+  <div class="logo">Mochi Mochi Cafe</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1200px;margin:0 auto">
+<section class="hero" id="home">
+  <div>
+    <div class="hero-tag">Est. 2022 · Fort Lee, NJ</div>
+    <h1>Fresh Coffee,<br>Made With <em>Care</em></h1>
+    <p class="hero-sub">Family owned and operated. Enjoy our fresh coffee, bubble tea, bingsu, croffles, and desserts — in a cozy, study-friendly space.</p>
+    <div class="btn-group">
+      <a href="#menu" class="btn btn-primary">See Our Menu</a>
+      <a href="#visit" class="btn btn-outline">Find Us</a>
+    </div>
+  </div>
+  <div class="carousel-wrap" id="heroCarousel">
+    <img src="images/mochi1.jpg" class="carousel-image active" alt="Cafe exterior"/>
+    <img src="images/mochi2.jpg" class="carousel-image" alt="Cafe entrance"/>
+    <img src="images/mochi3.jpg" class="carousel-image" alt="Cafe interior"/>
+    <div class="carousel-dots">
+      <div class="dot active" onclick="goSlide(0)"></div>
+      <div class="dot" onclick="goSlide(1)"></div>
+      <div class="dot" onclick="goSlide(2)"></div>
+    </div>
+  </div>
+</section>
 </div>
-    </section>
 
-    <section id="contact">
-      <h2 class="section-title">Visit Us</h2>
-      <div class="contact">
-        <p>Mon–Thu: 10am – 10pm</p>
-        <p>Fri–Sat: 10am – 11pm</p>
-        <p>Sun: 12pm – 10pm</p>
-        <p>2175 Lemoine Ave, Fort Lee, NJ 07024</p>
-        <p>Email: mochimochi@gmail.com</p>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="images/mochi1.jpg" alt="Mochi Mochi Cafe exterior"/>
+        <img src="images/mochi2.jpg" alt="Cafe entrance"/>
+        <img src="images/mochi3.jpg" alt="Cafe interior"/>
       </div>
-    </section>
-  </main>
+      <div>
+        <div class="sec-tag">Our Story</div>
+        <h2>A neighborhood cafe with heart</h2>
+        <p>Mochi Mochi Cafe is a family owned and operated coffee shop in Fort Lee, NJ. We opened in 2022 with one goal — to create a warm, welcoming space where everyone feels at home.</p>
+        <p>From hand-crafted lattes and bubble teas to Korean bingsu and freshly made croffles, every item is made with care. Newly renovated with a study-friendly environment perfect for casual meetups too.</p>
+        <div class="about-stats">
+          <div class="stat"><span class="num">2022</span><span class="lbl">Est. in Fort Lee</span></div>
+          <div class="stat"><span class="num">5+</span><span class="lbl">Menu categories</span></div>
+          <div class="stat"><span class="num">❤️</span><span class="lbl">Family owned</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Mochi Mochi Cafe. All rights reserved.
-  </footer>
+<!-- MENU -->
+<section id="menu">
+  <div class="container">
+    <div class="sec-tag">What We Serve</div>
+    <h2>Our Menu</h2>
+    <div class="menu-nav" id="menuNav"></div>
+    <div id="menuContent"></div>
+  </div>
+</section>
 
-<script>
-  const images = document.querySelectorAll('.carousel-image');
-  let currentIndex = 0;
+<!-- VISIT -->
+<section class="visit" id="visit">
+  <div class="container">
+    <div class="sec-tag">Come See Us</div>
+    <h2>Plan Your Visit</h2>
+    <div class="info-grid">
+      <div class="icard">
+        <span class="icard-icon">📍</span>
+        <h3>Location</h3>
+        <p>2175 Lemoine Ave<br>Fort Lee, NJ 07024<br><br><a href="https://maps.google.com/?q=2175+Lemoine+Ave+Fort+Lee+NJ">Get Directions →</a></p>
+      </div>
+      <div class="icard">
+        <span class="icard-icon">🕐</span>
+        <h3>Hours</h3>
+        <div class="hr-row"><span>Mon – Thu</span><span>10am – 10pm</span></div>
+        <div class="hr-row"><span>Fri – Sat</span><span>10am – 11pm</span></div>
+        <div class="hr-row"><span>Sunday</span><span>12pm – 10pm</span></div>
+      </div>
+      <div class="icard">
+        <span class="icard-icon">✉️</span>
+        <h3>Contact</h3>
+        <p>mochimochi@gmail.com<br><br>Follow us for specials<br>and seasonal menu updates!</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  setInterval(() => {
-    images[currentIndex].classList.remove('active');
+<footer>
+  <span class="flogo">Mochi Mochi Cafe</span>
+  <div class="socials">
+    <a href="#">ig</a>
+    <a href="#">fb</a>
+  </div>
+  <p>2175 Lemoine Ave, Fort Lee, NJ 07024 · mochimochi@gmail.com<br>© 2026 Mochi Mochi Cafe. All rights reserved.</p>
+</footer>
 
-    currentIndex = (currentIndex + 1) % images.length;
+<!-- BOTTOM TAB BAR (mobile only) -->
+<div class="bottom-tab-bar-wrap" id="bottomTabBarWrap">
+  <div class="bottom-tab-bar" id="bottomTabBar"></div>
+  <div class="scroll-hint" id="scrollHint">
+    <span class="scroll-hint-icon">›</span>
+  </div>
+</div>
 
-    images[currentIndex].classList.add('active');
-  }, 4000); // 4 seconds per image
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
