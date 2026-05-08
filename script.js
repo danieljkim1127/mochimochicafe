@@ -263,9 +263,10 @@ function renderMenu(cat) {
   const list = document.createElement('div');
   list.className = 'menu-list';
 
-  cat.items.forEach(item => {
+  cat.items.forEach((item, i) => {
     const card = document.createElement('div');
     card.className = 'menu-card';
+    card.style.animationDelay = `${i * 50}ms`;
     card.innerHTML = `
       <div class="menu-card-body">
         <div class="menu-card-name">${item.name}</div>
